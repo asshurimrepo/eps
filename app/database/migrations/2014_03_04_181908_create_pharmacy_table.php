@@ -14,8 +14,7 @@ class CreatePharmacyTable extends Migration {
 	{
         Schema::create('pharmacy', function(Blueprint $table) {
             $table->increments('id');
-			$table->string('username');
-			$table->string('password');
+			$table->integer('user_id');
 			$table->string('name');
 			$table->string('location');
 			$table->timestamps('');

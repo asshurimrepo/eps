@@ -19,7 +19,7 @@ class CreatePatientTable extends Migration {
 			$table->string('lastname');
 			$table->string('age');
 			$table->string('birthdate');
-			$table->string('gender');
+			$table->enum('gender',['Male','Female']);
 			$table->timestamps('');
         });
 	}
