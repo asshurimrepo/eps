@@ -2,18 +2,14 @@
 
 class AuthController extends BaseController {
 
- public function getIndex()
- {
- 	# code...
- }
+	public function getIndex()
+	{
+		
+	}
 
- public function postCheck()
- {
- 	# code...
- }
+	public function getLogin()
+	{
+		return View::make('login');
+	}
 
-public function getLogin()
-{
-	# code...
-}
 }
