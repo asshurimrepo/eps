@@ -59,17 +59,7 @@
 <!-- Support media queries for IE8 -->
 <script src="{{ url('') }}/js/respond.min.js"></script>
 
-<script type="text/javascript">
-  var _gaq = _gaq || [];
-  _gaq.push(['_setAccount', 'UA-11097556-8']);
-  _gaq.push(['_trackPageview']);
 
-  (function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-  })();
-</script>
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" /></head>
 
@@ -82,158 +72,24 @@
             
             <div class="btn-responsive-menu"> <span class="bar"></span> <span class="bar"></span> <span class="bar"></span> </div>
 
-            <nav class="col-md-8 col-xs-9" id="top-nav">
+           <!--  <nav class="col-md-8 col-xs-9" id="top-nav">
             	<ul>
                     <li><a href="{{ url('') }}/../index.html">Full version</a></li>
                     <li><a href="{{ url('') }}/#" id="purchase">Purchase this template</a></li>
                </ul>
-            </nav><!-- End Nav -->
+            </nav> --><!-- End Nav -->
             
          </div><!-- End row -->
          </div><!-- End container -->
         </header> <!-- End header -->
         	
-            <div class="container">
-             <div class="row">
-                 <div class="col-md-12 main-title">
-                 <h1>Satisfaction survey</h1>
-                <p>Help us to improve our service and customer satisfaction.</p>
-                </div>
-       		</div>
-            </div>
-
-<section class="container" id="main">
-
-<!-- Start Survey container -->
-<div id="survey_container">
-
-	<div id="top-wizard">
-		<strong>Progress <span id="location"></span></strong>
-		<div id="progressbar"></div>
-		<div class="shadow"></div>
-	</div><!-- end top-wizard -->
-    
-	<form name="example-1" id="wrapped" action="survey_send_1.php" method="POST" />
-		<div id="middle-wizard">
-			<div class="step">
-				<div class="row">
-					<h3 class="col-md-10">Enter your personal info</h3>
-					<div class="col-md-6">
-						<ul class="data-list">
-							<li><input type="text" name="firstname" class="required form-control" placeholder="First name" /></li>
-							<li><input type="text" name="lastname" class="required form-control" placeholder="Last name" /></li>
-							<li><input type="email" name="email" class="required form-control" placeholder="Your Email" /></li>
-						</ul>
-					</div><!-- end col-md-6 -->
-                    
-					<div class="col-md-6">
-                    
-						<ul class="data-list">
-							<li>
-							<div class="styled-select">
-								<select class="form-control required" name="country">
-									<option value="" selected="" />Select your country
-									<option value="Europe" />Europe
-									<option value="Asia" />Asia
-									<option value="North America" />North America
-									<option value="South America" />South America
-								</select>
-							</div>
-							</li>
-						</ul>
-                        
-						<ul class="data-list">
-							<li>
-							<div class="qty-buttons">
-								<input type="button" value="-" class="qtyminus" name="quantity" />
-								<input type="text" name="quantity" value="" class="qty form-control required" placeholder="none" />
-								<input type="button" value="+" class="qtyplus" name="quantity" /><span>Your incrementer</span>
-							</div>
-							</li>
-						</ul>
-                        
-						<ul class="data-list floated clearfix">
-							<li id="age"><input type="text" name="age" class="required form-control" placeholder="Age" /></li>
-							<li><input name="gender" type="radio" class="required" value="Male" /><label class="label_gender"> Male</label></li>
-							<li><input name="gender" type="radio" class="required" value="Female" /><label class="label_gender"> Female</label></li>
-						</ul>
-                        
-					</div><!-- end col-md-6 -->
-				</div><!-- end row -->
-                
-				<div class="row">
-					<div class="col-md-4 col-md-offset-4">
-						<ul class="data-list" id="terms">
-							<li>
-                            <strong>Do you accept <a href="{{ url('') }}/#" data-toggle="modal" data-target="#terms-txt">terms and conditions</a> ?</strong>
-							<div style="position:relative">
-								<select class=" example-1 required" name="terms">
-									<option value="" />No
-									<option value="Accepted" />Yes
-								</select>
-							</div>
-							</li>
-						</ul>
-					</div>
-				</div>
-                
-			</div><!-- end step-->
-            
-			<div class="step row">
-				<div class="col-md-10">
-					<h3>Please rate your overall satisfaction about the service provided.</h3>
-					<ul class="data-list-2">
-						<li><input name="rate" type="radio" class="required" value="Not Satisfied" /><label>Not Satisfied</label></li>
-						<li><input name="rate" type="radio" class="required" value="Quite Satisfied" /><label>Quite Satisfied</label></li>
-						<li><input name="rate" type="radio" class="required" value="Satisfied" /><label>Satisfied</label></li>
-						<li><input name="rate" type="radio" class="required" value="Completely Satisfied" /><label>Completely Satisfied</label></li>
-					</ul>
-				</div>
-			</div><!-- end step -->
-            
-			<div class="step row">
-				<div class="col-md-10">
-					<h3>How did you hear about our company?</h3>
-					<ul class="data-list-2">
-						<li><input name="question_1[]" type="checkbox" class="required" value="Google" /><label>Google</label></li>
-						<li><input name="question_1[]" type="checkbox" class="required" value="A friend of mine" /><label>A friend of mine</label></li>
-						<li><input name="question_1[]" type="checkbox" class="required" value="Print advertise" /><label>Print advertise</label></li>
-						<li><input name="question_1[]" type="checkbox" class="required" value="Newspaper" /><label>Newspaper</label></li>
-					</ul>
-				</div>
-			</div><!-- end step -->
-            
-			<div class="step row">
-				<div class="col-md-10">
-					<h3>Do you think to suggest our company to a friend or parent?</h3>
-					<ul class="data-list-2 clearfix">
-						<li><input name="question_2" type="radio" class="required" value="No" /><label>No</label></li>
-						<li><input name="question_2" type="radio" class="required" value="Maybe" /><label>Maybe</label></li>
-					  <li><input name="question_2" type="radio" class="required" value="Probably" /><label>Probably </label></li>
-						<li><input name="question_2" type="radio" class="required" value="100% Sure" /><label>100% Sure</label></li>
-						<li><strong>In no, please describe with few words why</strong><textarea name="message_suggest_no" class="form-control"></textarea></li>
-					</ul>
-				</div>
-			</div><!-- end step -->
-            
-			<div class="submit step" id="complete">
-                    	<i class="icon-check"></i>
-						<h3>Survey complete! Thank you for you time.</h3>
-						<button type="submit" name="process" class="submit">Submit the survey</button>
-			</div><!-- end submit step -->
-            
-		</div><!-- end middle-wizard -->
-        
-		<div id="bottom-wizard">
-			<button type="button" name="backward" class="backward">Backward</button>
-			<button type="button" name="forward" class="forward">Forward </button>
-		</div><!-- end bottom-wizard -->
-	</form>
-    
-</div><!-- end Survey container -->
+          
+        <div style="min-height:500px">
+        	@yield('c')
+        </div>
 
 
-</section><!-- end section main container -->
+<!-- end section main container -->
        
 <footer>
 	<section class="container">
