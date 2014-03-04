@@ -7,4 +7,13 @@ class AuthController extends BaseController {
  	# code...
  }
 
+ public function postCheck()
+ {
+ 	# code...
+ }
+
+public function getLogin()
+{
+	# code...
+}
 }
