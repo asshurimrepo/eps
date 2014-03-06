@@ -11,6 +11,10 @@
 |
 */
 
+App::missing(function(){
+	return '404 error';
+});
+
 App::before(function($request)
 {
 	//

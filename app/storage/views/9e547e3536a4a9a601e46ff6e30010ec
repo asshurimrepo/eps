@@ -7,7 +7,7 @@
 
 <!-- Basic Page Needs -->
 <meta charset="utf-8" />
-<title>PLANIO Survey Responsive Template</title>
+<title>EPS</title>
 <meta name="description" content="" />
 <meta name="author" content="Ansonika" />
 
@@ -72,20 +72,31 @@
             
             <div class="btn-responsive-menu"> <span class="bar"></span> <span class="bar"></span> <span class="bar"></span> </div>
 
-           <!--  <nav class="col-md-8 col-xs-9" id="top-nav">
+            <?php if(!Auth::guest()): ?>
+
+            <nav class="col-md-8 col-xs-9" id="top-nav">
             	<ul>
-                    <li><a href="<?php echo url(''); ?>/../index.html">Full version</a></li>
-                    <li><a href="<?php echo url(''); ?>/#" id="purchase">Purchase this template</a></li>
+                    <li> You are log in as <a href=""><?php echo Auth::user()->username; ?></a></li>
+                    <li><a href="<?php echo url('auth/logout'); ?>" id="purchase">  Logout</a></li>
                </ul>
-            </nav> --><!-- End Nav -->
+            </nav>
+            <!-- End Nav -->
+
+            <?php endif; ?>
             
          </div><!-- End row -->
          </div><!-- End container -->
         </header> <!-- End header -->
         	
+
+
           
         <div style="min-height:500px">
+
+
         	<?php echo $__env->yieldContent('c'); ?>
+
+
         </div>
 
 
@@ -94,26 +105,23 @@
 <footer>
 	<section class="container">
 	<div class="row">
-    	<div class="col-md-4">
+    	<div class="col-md-6">
         	<h3>About us</h3>
-            <p>Lorem ipsum dolor sit amet, duo iudico accusamus ne, at vix sumo alia. Usu etiam probatus ne, eu magna ullum iusto his. Nec ea case eirmod dissentiunt. Etiam denique has cu, nam quando accusamus dissentiunt ne. Ea sit malorum scribentur.</p>
+            <p>Electronic prescription or e-prescribing (e-Rx) is the computer-based electronic generation, transmission and filling of a medical prescription, taking the place of paper and faxed prescriptions. </p>
         </div>
         
-        <div class="col-md-4" id="contact">
+        <div class="col-md-6" id="contact">
         	<h3>Contact info</h3>
-            <p>Nec ea case eirmod dissentiunt. Etiam denique has cu, nam quando accusamus dissentiunt ne. </p> 
+            <p>Silliman university Medical Center </p> 
                 <ul>
-                        <li><i class="icon-home"></i> 1110 Bates Avenue Los Angeles, CA 90029, US</li>
-                        <li><i class="icon-phone"></i> Telephone: 41.22.319.36.10 </li>
-                        <li><i class="icon-envelope"></i> Email: <a href="<?php echo url(''); ?>/#">info@planio.com </a></li>
-                        <li><i class="icon-skype"></i> Skype name: Planio</li>
+                        <li><i class="icon-home"></i> Address: Aldecoa Drive 6200 Dumaguete City</li>
+                        <li><i class="icon-phone"></i> Telephone: (035)422-6002 or (035)225-0814 </li>
+                        <li><i class="icon-envelope"></i> Email: <a href="<?php echo url(''); ?>/#">sumc@planio.com </a></li>
+                        <li><i class="icon-skype"></i> Skype name: sumc</li>
                     </ul>    
         </div>
         
-        <div class="col-md-4">
-        	<h3>Latest tweet</h3>
-            <div id="tweets"></div>
-        </div>
+        
         
     </div><!-- end row -->
   	</section>
@@ -123,18 +131,13 @@
     <div class="row">
     	<div class="col-md-6">
                 <ul id="footer-nav">
-                	<li>Copyright© Ansonika </li>
-                    <li><a href="<?php echo url(''); ?>/#">Terms of Use</a></li>
-                    <li><a href="<?php echo url(''); ?>/#">Privacy</a></li>
+                	<li>Copyright© CreativeAssh </li>
                 </ul>              
         </div>
             <div class="col-md-6" style="text-align:center">
                 <ul class="social-bookmarks clearfix">
                     <li class="facebook"><a href="<?php echo url(''); ?>/#">facebook</a></li>
-                    <li class="googleplus"><a href="<?php echo url(''); ?>/#">googleplus</a></li>
                     <li class="twitter"><a href="<?php echo url(''); ?>/#">twitter</a></li>
-                    <li class="delicious"><a href="<?php echo url(''); ?>/#">delicious</a></li>
-                    <li class="paypal"><a href="<?php echo url(''); ?>/#">paypal</a></li>
                 </ul>
             </div>
         </div>
@@ -145,51 +148,7 @@
  
  <div id="toTop">Back to Top</div>  
 
-<!-- Modal About -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel">About us</h4>
-      </div>
-      <div class="modal-body">
-        <p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum 
-sanctus, pro ne quod dicunt sensibus.</p>
-<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum 
-sanctus, pro ne quod dicunt sensibus. Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum 
-sanctus, pro ne quod dicunt sensibus.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
-<!-- Modal About -->
-<div class="modal fade" id="terms-txt" tabindex="-1" role="dialog" aria-labelledby="termsLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="termsLabel">Terms and conditions</h4>
-      </div>
-      <div class="modal-body">
-        <p>Lorem ipsum dolor sit amet, in porro albucius qui, in <strong>nec quod novum accumsan</strong>, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum 
-sanctus, pro ne quod dicunt sensibus.</p>
-<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum 
-sanctus, pro ne quod dicunt sensibus. Lorem ipsum dolor sit amet, <strong>in porro albucius qui</strong>, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum 
-sanctus, pro ne quod dicunt sensibus.</p>
-<p>Lorem ipsum dolor sit amet, in porro albucius qui, in nec quod novum accumsan, mei ludus tamquam dolores id. No sit debitis meliore postulant, per ex prompta alterum 
-sanctus, pro ne quod dicunt sensibus.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
 
 <!-- OTHER JS --> 
 <script src="<?php echo url(''); ?>/js/jquery.validate.js"></script>
@@ -202,6 +161,8 @@ sanctus, pro ne quod dicunt sensibus.</p>
 <script src="<?php echo url(''); ?>/js/owl.carousel.min.js"></script>
 <script src="<?php echo url(''); ?>/js/functions.js"></script>
 
+
+<?php echo $__env->yieldContent('js'); ?>
 
 <!-- FANCYBOX -->
 <script src="<?php echo url(''); ?>/js/fancybox/source/jquery.fancybox.pack.js?v=2.1.4" type="text/javascript"></script> 
