@@ -5,7 +5,15 @@ class MainController extends BaseController {
 	public function getIndex()
 	{
 		Session::forget('pres');
-		return View::make('e_pres.wizard');
+
+		if(Auth::user()->type == 'doc'){
+			$to_load_view = 'e_pres.wizard';
+		}else{
+			$to_load_view = 'e_pres.list';
+		}
+
+
+		return View::make($to_load_view);
 	}
 
 
@@ -19,6 +27,7 @@ class MainController extends BaseController {
 			$pres_data = $value;
 			$pres_data['pharmacy_id'] = Input::get('pharmacy_id');
 			$pres_data['patient_id'] = $p->id;
+			$pres_data['user_id'] = Auth::user()->id;
 
 			Prescription::create($pres_data);
 		}

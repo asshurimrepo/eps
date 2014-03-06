@@ -11,11 +11,13 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for eps_db
+DROP DATABASE IF EXISTS `eps_db`;
 CREATE DATABASE IF NOT EXISTS `eps_db` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `eps_db`;
 
 
 -- Dumping structure for table eps_db.drugs
+DROP TABLE IF EXISTS `drugs`;
 CREATE TABLE IF NOT EXISTS `drugs` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -35,6 +37,7 @@ INSERT INTO `drugs` (`id`, `name`, `created_at`, `updated_at`) VALUES
 
 
 -- Dumping structure for table eps_db.migrations
+DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
@@ -53,6 +56,7 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 
 
 -- Dumping structure for table eps_db.patients
+DROP TABLE IF EXISTS `patients`;
 CREATE TABLE IF NOT EXISTS `patients` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `firstname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -65,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `patients` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table eps_db.patients: ~3 rows (approximately)
+-- Dumping data for table eps_db.patients: ~5 rows (approximately)
 DELETE FROM `patients`;
 /*!40000 ALTER TABLE `patients` DISABLE KEYS */;
 INSERT INTO `patients` (`id`, `firstname`, `middlename`, `lastname`, `age`, `gender`, `created_at`, `updated_at`) VALUES
@@ -78,6 +82,7 @@ INSERT INTO `patients` (`id`, `firstname`, `middlename`, `lastname`, `age`, `gen
 
 
 -- Dumping structure for table eps_db.pharmacies
+DROP TABLE IF EXISTS `pharmacies`;
 CREATE TABLE IF NOT EXISTS `pharmacies` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
@@ -100,9 +105,11 @@ INSERT INTO `pharmacies` (`id`, `user_id`, `name`, `location`, `created_at`, `up
 
 
 -- Dumping structure for table eps_db.prescriptions
+DROP TABLE IF EXISTS `prescriptions`;
 CREATE TABLE IF NOT EXISTS `prescriptions` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `drug_id` int(11) NOT NULL,
+  `user_id` int(11) NOT NULL,
   `patient_id` int(11) NOT NULL,
   `pharmacy_id` int(11) NOT NULL,
   `dosage` double NOT NULL,
@@ -116,18 +123,19 @@ CREATE TABLE IF NOT EXISTS `prescriptions` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table eps_db.prescriptions: ~0 rows (approximately)
+-- Dumping data for table eps_db.prescriptions: ~4 rows (approximately)
 DELETE FROM `prescriptions`;
 /*!40000 ALTER TABLE `prescriptions` DISABLE KEYS */;
-INSERT INTO `prescriptions` (`id`, `drug_id`, `patient_id`, `pharmacy_id`, `dosage`, `measure`, `form`, `frequency`, `start_date`, `end_date`, `created_at`, `updated_at`) VALUES
-	(1, 2, 4, 4, 0, 'ml', 'tablet', '3 times a day', '2014-03-27', '2014-03-31', '2014-03-06 09:00:20', '2014-03-06 09:00:20'),
-	(4, 2, 5, 4, 0, 'ml', 'tablet', '3 times a day', '2014-03-27', '2014-03-31', '2014-03-06 09:02:18', '2014-03-06 09:02:18'),
-	(5, 2, 5, 4, 0, 'ml', 'tablet', '3 times a day', '2014-03-27', '2014-04-02', '2014-03-06 09:02:18', '2014-03-06 09:02:18'),
-	(6, 2, 5, 4, 3, 'ml', 'tablet', '3 times a day', '2014-03-27', '2014-04-02', '2014-03-06 09:02:18', '2014-03-06 09:02:18');
+INSERT INTO `prescriptions` (`id`, `drug_id`, `user_id`, `patient_id`, `pharmacy_id`, `dosage`, `measure`, `form`, `frequency`, `start_date`, `end_date`, `created_at`, `updated_at`) VALUES
+	(1, 2, 1, 4, 4, 0, 'ml', 'tablet', '3 times a day', '2014-03-27', '2014-03-31', '2014-03-06 09:00:20', '2014-03-06 09:00:20'),
+	(4, 2, 1, 5, 4, 0, 'ml', 'tablet', '3 times a day', '2014-03-27', '2014-03-31', '2014-03-06 09:02:18', '2014-03-06 09:02:18'),
+	(5, 2, 1, 5, 4, 0, 'ml', 'tablet', '3 times a day', '2014-03-27', '2014-04-02', '2014-03-06 09:02:18', '2014-03-06 09:02:18'),
+	(6, 2, 1, 5, 4, 3, 'ml', 'tablet', '3 times a day', '2014-03-27', '2014-04-02', '2014-03-06 09:02:18', '2014-03-06 09:02:18');
 /*!40000 ALTER TABLE `prescriptions` ENABLE KEYS */;
 
 
 -- Dumping structure for table eps_db.users
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -139,16 +147,18 @@ CREATE TABLE IF NOT EXISTS `users` (
   `title` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `gender` enum('Male','Female') COLLATE utf8_unicode_ci NOT NULL,
   `birthdate` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `type` enum('doc','pharm','admin') COLLATE utf8_unicode_ci NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   `updated_at` timestamp NOT NULL DEFAULT '0000-00-00 00:00:00',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
--- Dumping data for table eps_db.users: ~1 rows (approximately)
+-- Dumping data for table eps_db.users: ~2 rows (approximately)
 DELETE FROM `users`;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` (`id`, `username`, `password`, `firstname`, `middlename`, `lastname`, `address`, `title`, `gender`, `birthdate`, `created_at`, `updated_at`) VALUES
-	(1, 'doc', '$2y$10$e1htJzJxGg.QM28sbAvjz.TV6elm6msD9rFMzaMha9Hm15BKDVtnC', 'Asshurim', '', 'Larita', '', 'MBA', 'Male', '', '2014-03-05 17:26:00', '2014-03-05 17:26:00');
+INSERT INTO `users` (`id`, `username`, `password`, `firstname`, `middlename`, `lastname`, `address`, `title`, `gender`, `birthdate`, `type`, `created_at`, `updated_at`) VALUES
+	(1, 'doc', '$2y$10$e1htJzJxGg.QM28sbAvjz.TV6elm6msD9rFMzaMha9Hm15BKDVtnC', 'Asshurim', '', 'Larita', '', 'MBA', 'Male', '', 'doc', '2014-03-05 17:26:00', '2014-03-05 17:26:00'),
+	(4, 'pharm', '$2y$10$e1htJzJxGg.QM28sbAvjz.TV6elm6msD9rFMzaMha9Hm15BKDVtnC', 'Asshurim', '', 'Larita', '', 'MBA', 'Male', '', 'pharm', '2014-03-05 17:26:00', '2014-03-05 17:26:00');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 /*!40101 SET SQL_MODE=IFNULL(@OLD_SQL_MODE, '') */;
 /*!40014 SET FOREIGN_KEY_CHECKS=IF(@OLD_FOREIGN_KEY_CHECKS IS NULL, 1, @OLD_FOREIGN_KEY_CHECKS) */;
