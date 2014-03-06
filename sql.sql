@@ -11,13 +11,11 @@
 /*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
 
 -- Dumping database structure for eps_db
-DROP DATABASE IF EXISTS `eps_db`;
 CREATE DATABASE IF NOT EXISTS `eps_db` /*!40100 DEFAULT CHARACTER SET latin1 */;
 USE `eps_db`;
 
 
 -- Dumping structure for table eps_db.drugs
-DROP TABLE IF EXISTS `drugs`;
 CREATE TABLE IF NOT EXISTS `drugs` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -37,7 +35,6 @@ INSERT INTO `drugs` (`id`, `name`, `created_at`, `updated_at`) VALUES
 
 
 -- Dumping structure for table eps_db.migrations
-DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE IF NOT EXISTS `migrations` (
   `migration` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `batch` int(11) NOT NULL
@@ -56,7 +53,6 @@ INSERT INTO `migrations` (`migration`, `batch`) VALUES
 
 
 -- Dumping structure for table eps_db.patient
-DROP TABLE IF EXISTS `patient`;
 CREATE TABLE IF NOT EXISTS `patient` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `firstname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -76,7 +72,6 @@ DELETE FROM `patient`;
 
 
 -- Dumping structure for table eps_db.pharmacy
-DROP TABLE IF EXISTS `pharmacy`;
 CREATE TABLE IF NOT EXISTS `pharmacy` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `user_id` int(11) NOT NULL,
@@ -94,7 +89,6 @@ DELETE FROM `pharmacy`;
 
 
 -- Dumping structure for table eps_db.prescriptions
-DROP TABLE IF EXISTS `prescriptions`;
 CREATE TABLE IF NOT EXISTS `prescriptions` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `drug_id` int(11) NOT NULL,
@@ -116,7 +110,6 @@ DELETE FROM `prescriptions`;
 
 
 -- Dumping structure for table eps_db.users
-DROP TABLE IF EXISTS `users`;
 CREATE TABLE IF NOT EXISTS `users` (
   `id` int(10) unsigned NOT NULL AUTO_INCREMENT,
   `username` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
