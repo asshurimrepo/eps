@@ -52,6 +52,10 @@
 
 <section class="container" id="main">
 
+
+@include('alert');
+
+
 <!-- Start Survey container -->
 <div id="survey_container">
 
@@ -61,7 +65,7 @@
 		<div class="shadow"></div>
 	</div><!-- end top-wizard -->
     
-	<form name="example-1" id="wrapped" action="survey_send_1.php" method="POST" />
+	<form name="example-1" id="wrapped" action="{{ url('submit-prescription') }}" method="POST" />
 		<div id="middle-wizard">
 			<div class="step">
 				<div class="row">
@@ -167,7 +171,7 @@
 
 				<div class="col-md-6">
 					
-				<table class="table table-hover">
+				<table class="table table-hover table-pres">
 					
 					<thead>
 						
@@ -198,33 +202,85 @@
             
 			<div class="step row">
 				<div class="col-md-10">
-					<h3>How did you hear about our company?</h3>
-					<ul class="data-list-2">
-						<li><input name="question_1[]" type="checkbox" class="required" value="Google" /><label>Google</label></li>
-						<li><input name="question_1[]" type="checkbox" class="required" value="A friend of mine" /><label>A friend of mine</label></li>
-						<li><input name="question_1[]" type="checkbox" class="required" value="Print advertise" /><label>Print advertise</label></li>
-						<li><input name="question_1[]" type="checkbox" class="required" value="Newspaper" /><label>Newspaper</label></li>
-					</ul>
+					<h3>Prescription Summary</h3>
+					
+					<div class="col-md-12">
+						
+						<table class="table table-bordered table-condensed table-summary">
+						<thead>
+								
+								<tr>
+									<th colspan="2"> Patient's Information </th>
+								</tr>
+
+						</thead>
+						<tbody>
+								
+								<tr>
+									
+									<th>First Name:</th>
+									<td id="firstname"></td>
+
+								</tr>
+
+								<tr>
+									
+									<th>Middle Name:</th>
+									<td id="middlename"></td>
+
+								</tr>
+
+								<tr>
+									
+									<th>Last Name:</th>
+									<td id="lastname"></td>
+
+								</tr>
+
+								<tr>
+									
+									<th>Age:</th>
+									<td id="f_age"></td>
+
+								</tr>
+
+								<tr>
+									
+									<th>Gender:</th>
+									<td id="gender"></td>
+
+								</tr>
+
+						</tbody>
+
+					</table>
+
+
+					<div class="pres_cont"></div>
+
+					</div>
+
+
 				</div>
 			</div><!-- end step -->
             
 			<div class="step row">
 				<div class="col-md-10">
-					<h3>Do you think to suggest our company to a friend or parent?</h3>
+					<h3>Select Pharmacy?</h3>
 					<ul class="data-list-2 clearfix">
-						<li><input name="question_2" type="radio" class="required" value="No" /><label>No</label></li>
-						<li><input name="question_2" type="radio" class="required" value="Maybe" /><label>Maybe</label></li>
-					  <li><input name="question_2" type="radio" class="required" value="Probably" /><label>Probably </label></li>
-						<li><input name="question_2" type="radio" class="required" value="100% Sure" /><label>100% Sure</label></li>
-						<li><strong>In no, please describe with few words why</strong><textarea name="message_suggest_no" class="form-control"></textarea></li>
+
+					@foreach(Pharmacy::all() as $pharm)
+						<li><input name="pharmacy_id" type="radio" class="required" value="{{ $pharm->id }}" /><label>{{ $pharm->name }}</label></li>
+					@endforeach
+
 					</ul>
 				</div>
 			</div><!-- end step -->
             
 			<div class="submit step" id="complete">
                     	<i class="icon-check"></i>
-						<h3>Survey complete! Thank you for you time.</h3>
-						<button type="submit" name="process" class="submit">Submit the survey</button>
+						<h3>Prescription complete!</h3>
+						<button type="submit" name="process" class="submit">Submit the prescription</button>
 			</div><!-- end submit step -->
             
 		</div><!-- end middle-wizard -->

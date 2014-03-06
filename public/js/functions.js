@@ -62,6 +62,18 @@ jQuery(function($) {
 
 				$("#survey_container").wizard({
 					afterSelect: function( event, state ) {
+
+						if(state.stepsComplete == 2){
+
+							$("#firstname").html($("*[name='firstname']").val());
+							$("#middlename").html($("*[name='middlename']").val());
+							$("#lastname").html($("*[name='lastname']").val());
+							$("#f_age").html($("*[name='age']").val());
+							$("#gender").html($("*[name='gender']").val());
+							$(".pres_cont").html($(".table-pres").parent().html());
+
+						}
+
 						$("#progressbar").progressbar("value", state.percentComplete);
 						$("#location").text("(" + state.stepsComplete + "/" + state.stepsPossible + ")");
 					}
