@@ -69,7 +69,7 @@
 		<div id="middle-wizard">
 			<div class="step">
 				<div class="row">
-					<h3 class="col-md-10">Enter your patient's info</h3>
+					<h3 class="col-md-10">Enter Your Patient's Info</h3>
 					<div class="col-md-6">
 						<ul class="data-list">
 							<li>{{ Form::text('firstname', null, ['class'=>'required form-control', 'placeholder'=>'First Name']) }}</li>

@@ -28,7 +28,7 @@
           @include('alert')
 
 
-					<h3 class="col-md-12"><center>Enter your login info</center></h3>
+					<h3 class="col-md-12"><center>Enter Your Login Info</center></h3>
 
 
 
