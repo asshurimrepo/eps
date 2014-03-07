@@ -68,8 +68,16 @@
 	<header>
          <div class="container">
             <div class="row">
-        	<div class="col-md-4 col-xs-3" id="logo"><a href="{{ url('') }}/index.html">Planio Survey template</a></div>
+        	<div class="col-md-1 col-xs-3" id="logo"><a href="{{ url('/') }}">EPS</a></div>
+
+
+            <div class="col-md-3" style="padding: 5px 10px;">
+            @if(isset(Auth::user()->type)  && Auth::user()->type == 'pharm')
+                <strong style="padding: 0;font-size: 22px;color: #fff;font-weight: 600;">{{ Pharmacy::current()->name }}</strong>
+            @endif
+            </div>
             
+
             <div class="btn-responsive-menu"> <span class="bar"></span> <span class="bar"></span> <span class="bar"></span> </div>
 
             @if(!Auth::guest())
