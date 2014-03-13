@@ -27,7 +27,7 @@
           <?php echo $__env->make('alert', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
 
 
-					<h3 class="col-md-12"><center>Enter your login info</center></h3>
+					<h3 class="col-md-12"><center>Enter Your Login Info</center></h3>
 
 
 

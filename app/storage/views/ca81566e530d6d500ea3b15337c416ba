@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<!--[if IE 7]><html class = "ie7"><![endif]-->
+<!--[if IE 8]><html class = "ie8"><![endif]-->
+<!--[if IE 9]><html class = "ie9"><![endif]-->
+<!--[if !(IE 7) | !(IE 8) | !(IE 9) ]><!-->
+<html>
+<!--<![endif]-->
+<head>
+<title>Silliman AsshDevA</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link rel="stylesheet" type="text/css" href="<?php echo url(''); ?>/bs/css/bootstrap.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo url(''); ?>/css/style.css" />
+<script type="text/javascript" src="<?php echo url(''); ?>/js/jquery-1.11.0.js" ></script>
+<script type="text/javascript" src="<?php echo url(''); ?>/js/script.js" ></script>
+<!--[if IE]><script src="<?php echo url(''); ?>/js/html5.js"></script><link rel="stylesheet" type="text/css" href="css/ie.css"><![endif]-->
+</head>
+<body class="login">
+<div class="wrapper login-wrapper">
+  <header>
+    <h1>E-Prescription System for Silliman Medical Center </h1>
+    <?php echo $__env->make('alert', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+  </header>
+  <!-- header -->
+  <div class="post">
+    <div class="post-header">
+      <h2>Sign in</h2>
+    </div>
+    <!-- .post-header -->
+    <form class="login-form clearfix" method="post" action="<?php echo url('check'); ?>">
+      <input required name="username" id="username" type="email" />
+      <input required name="password" type="password" />
+      <input type="submit" value="Sign in" />
+    </form>
+    <!-- .login-form -->
+    <div class="post-footer">
+    </div>
+    <!-- .post-footer -->
+  </div>
+  <!-- .post -->
+</div>
+<!-- .wrapper -->
+</body>
+</html>

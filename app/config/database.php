@@ -55,7 +55,7 @@ return array(
 		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'eps_db',
+			'database'  => 'silliman_db',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',

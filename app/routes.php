@@ -3,14 +3,19 @@
 
 
 
-
-Route::controller('auth', 'AuthController');
-
-
 Route::group(['before'=>'auth'], function(){
 
 
-		Route::controller('/', 'MainController');
+
+		Route::controller('main', 'MainController');
+
+		Route::resource('patients', 'PatientsController');
+
+		Route::resource('medications', 'MedicationsController');
+
+		Route::resource('pharmacies', 'PharmaciesController');	
 
 
 });
+
+Route::controller('/', 'AuthController');
