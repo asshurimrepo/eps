@@ -29,7 +29,8 @@ class MedicationsController extends BaseController {
 	 */
 	public function store()
 	{
-		//
+		Medication::create(Input::all());
+		return Redirect::back()->with('suc', 'New Medication has been added!');
 	}
 
 	/**

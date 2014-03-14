@@ -1,6 +1,7 @@
 @extends('master')
 
 
+
 @section('css')
 
 	<style type="text/css">
@@ -15,78 +16,139 @@
 
 @stop
 
+
+@section('js')
+
+	<script type="text/javascript">
+
+		$(document).ready(function() {
+
+			$("fieldset *").each(function(event) {
+				
+				var name = $(this).attr('name');
+				if(name != undefined){
+
+					$(".md_available option").attr('data-'+name, $(this).val());
+
+				}
+				
+
+			});
+
+			
+			$(".md_available").change(function(){
+
+				var b = $(".md_available option:selected");
+				$(".md_available option:selected").remove();
+
+				$(".md_list").append(b);
+
+
+			});
+
+
+
+			$(".md_list").change(function(){
+
+				// var data = $('.md_list option:selected').data();
+
+				$("fieldset *").each(function(event) {
+				
+					var name = $(this).attr('name');
+					if(name != undefined){
+
+						$(this).val( $('.md_list option:selected').attr('data-'+name) );
+
+					}
+					
+
+				});
+
+			});
+
+
+
+			$(".remove_from_list").click(function(){
+
+				var b = $(".md_list option:selected");
+				$(".md_list option:selected").remove();
+
+				$(".md_available").append(b);
+
+			});
+
+
+			$("fieldset *").change(function(event) {
+				
+				var name = $(this).attr('name');
+				if(name != undefined){
+
+					$(".md_list option:selected").attr('data-'+name, $(this).val());
+
+				}
+				
+
+			});
+
+		});
+	
+	@if(isset($patient))
+	
+		$(".pres_form").submit(function(){
+
+
+			$(".md_list option").each(function(){
+
+				var ob = this;
+				$(this).remove();
+				$(".md_list").append(ob);
+
+			});
+
+			$(".md_list option").each(function(){
+
+				var data = $(this).data();
+				data.medication_id = this.value;
+				data.patient_id = {{ $patient->id }};
+				$.post('{{ url('main/send-data') }}', {data:data});
+
+
+			});		
+
+			$(".pad").fadeOut(1500);
+			$(".success-sent").fadeIn(1600);
+
+			return false;
+
+		});
+
+	@endif
+
+	</script>
+
+@stop
+
 @section('c')
 
 	
 	<div class="row">
 
-	
-		
+
 		<div class="col-md-8">
 
+		@if(isset($patient))
 
-		<div class="panel panel-warning">
+			<script type="text/javascript">
 
-  <div class="panel-heading">
-    <h3 class="panel-title">Prescription Pad Request</h3>
-  </div>
-		  <div class="panel-body">
-		    
-		  	<div class="well">
-		  		
+				$(document).ready(function() {
+					$(".pad").fadeIn('slow');
+				});
 
-		  	<div class="row">
-		  		
+			</script>
 
-		  		<div class="col-md-12">
-		  		
-		  		<table class="table table-condense">
-		  			
-		  			<thead>
-		  				
-		  			<tr>
-		  				
-		  				<td align="right"><b>Patient:</b> </td> <td align="left">Briggs</td>
-		  				<td align="right"><b>Age:</b> </td> <td align="left">Briggs</td>
+			@include("patients.show")	
 
-		  			</tr>
-
-		  			<tr>
-		  				
-		  				<td align="right"><b>Date of Birth:</b> </td> <td align="left">Briggs</td>
-		  				<td align="right"><b>Weight:</b> </td> <td align="left">Briggs</td>
-
-		  			</tr>
-
-		  			<tr>
-		  				<td align="right"><b>Gender:</b> </td> <td align="left">Briggs</td>
-		  				<td align="right"><b>Age:</b> </td> <td align="left">Briggs</td>
-		  			</tr>
-
-		  			<tr>
-		  				<td align="right"><b>Phone:</b> </td> <td align="left">Briggs</td>
-		  			</tr>
-		  			</thead>
-
-		  		</table>
-
-
-		  	</div>
-
-		  	</div>
-
-		  		
-		  	</div>
-
-		  </div>
-		  <div class="panel-footer"> <small>Click any of the patient's row to get started</small> </div>
-		</div
-			
-			
-
-		</div>	
-
-
+		@endif
 		<div class="panel panel-primary">
 
   <div class="panel-heading">
@@ -113,9 +175,9 @@
         	
         	@foreach(Patient::all() as $p)
 
-        		<tr>
+        		<tr class="{{ isset($patient) && $patient->id == $p->id ? 'info' : '' }}" >
         			
-        			<td>{{ $p->fname }}</td>	
+        			<td>{{ link_to('main/index/'.$p->id, $p->fname) }}</td>	
         			<td>{{ $p->lname }}</td>	
         			<td>{{ $p->gender }}</td>	
         			<td>{{ $p->phone }}</td>	
@@ -146,20 +208,33 @@
 		
 		<div class="panel panel-primary">
 
-  <div class="panel-heading">
-    <h3 class="panel-title">Add New Patient</h3>
-  </div>
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Add New Patient</h3>
+		  </div>
 		  <div class="panel-body">
 		    
-		  	
+		  		@include('patients.create')
 
 		  </div>
-		  
+				  
 		</div
 			
-			
+	</div>
 
-		</div>
+	<div class="panel panel-primary">
+
+		  <div class="panel-heading">
+		    <h3 class="panel-title">Add New Medication</h3>
+		  </div>
+		  <div class="panel-body">
+		    
+		  		@include('medications.create')
+
+		  </div>
+				  
+		</div
+			
+	</div>
 
 	</div>
         

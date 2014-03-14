@@ -27,8 +27,8 @@
     </div>
     <!-- .post-header -->
     <form class="login-form clearfix" method="post" action="<?php echo url('check'); ?>">
-      <input required name="username" id="username" type="email" />
-      <input required name="password" type="password" />
+      <input required name="username" id="username" type="email" style="box-sizing:content-box;" />
+      <input required name="password" type="password" style="box-sizing:content-box;" />
       <input type="submit" value="Sign in" />
     </form>
     <!-- .login-form -->

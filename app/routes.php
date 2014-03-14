@@ -6,7 +6,6 @@
 Route::group(['before'=>'auth'], function(){
 
 
-
 		Route::controller('main', 'MainController');
 
 		Route::resource('patients', 'PatientsController');
@@ -15,7 +14,11 @@ Route::group(['before'=>'auth'], function(){
 
 		Route::resource('pharmacies', 'PharmaciesController');	
 
+		Route::resource('prescriptions', 'PrescriptionsController');
+
+
 
 });
 
 Route::controller('/', 'AuthController');
+

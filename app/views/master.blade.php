@@ -52,6 +52,8 @@
 <br>
 
 
+@include('alert')
+
 @yield('c')
 
 

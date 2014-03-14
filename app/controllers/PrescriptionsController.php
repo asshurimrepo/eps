@@ -1,6 +1,6 @@
 <?php
 
-class PatientsController extends BaseController {
+class PrescriptionsController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +9,7 @@ class PatientsController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('patients.index');
+        return View::make('prescriptions.index');
 	}
 
 	/**
@@ -19,7 +19,7 @@ class PatientsController extends BaseController {
 	 */
 	public function create()
 	{
-        return View::make('patients.create');
+        return View::make('prescriptions.create');
 	}
 
 	/**
@@ -29,8 +29,7 @@ class PatientsController extends BaseController {
 	 */
 	public function store()
 	{
-		$p = Patient::create(Input::all());
-		return Redirect::to('main/index/'.$p->id)->with('suc', 'New Patient has been added!');
+		//
 	}
 
 	/**
@@ -41,7 +40,7 @@ class PatientsController extends BaseController {
 	 */
 	public function show($id)
 	{
-        return View::make('patients.show');
+        return View::make('prescriptions.show');
 	}
 
 	/**
@@ -52,7 +51,7 @@ class PatientsController extends BaseController {
 	 */
 	public function edit($id)
 	{
-        return View::make('patients.edit');
+        return View::make('prescriptions.edit');
 	}
 
 	/**
