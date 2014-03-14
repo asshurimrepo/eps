@@ -4,9 +4,16 @@ class MainController extends BaseController {
 
 	public function getIndex($id = null)
 	{
-
-		if(Auth::user()->type == 'pharm')
+		
+		if(Auth::user()->type == 'pharm'):
+		
 			return Redirect::to('main/pharmacy');
+		
+		elseif(Auth::user()->type=="admin"):
+				
+			return Redirect::to('admin');
+
+		endif;
 
 		if($id){
 			$patient = Patient::find($id);
@@ -15,6 +22,12 @@ class MainController extends BaseController {
 		}
 
 		return View::make('main.index');
+	}
+
+	public function getDeleteUser($id)
+	{
+		User::find($id)->delete();
+		return Redirect::back()->with('suc', 'Account Successfully Deleted!');
 	}
 
 

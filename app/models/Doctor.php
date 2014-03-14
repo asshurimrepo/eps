@@ -1,10 +1,7 @@
 <?php
 
-class Pharmacy extends Eloquent {
+class Doctor extends Eloquent {
 	protected $guarded = array();
 
 	public static $rules = array();
-
-	
 }
-

@@ -6,17 +6,11 @@
 		  <div class="panel-body">
 		    
 		  	
-<form method="post" action="{{ route('pharmacies.store') }}" role="form">
+<form method="post" action="{{ route('doctors.store') }}" role="form">
 
-	{{ Form::hidden('type', 'pharm') }}
+	{{ Form::hidden('type', 'doc') }}
 
 	<div class="form-group">
-    {{ Form::label('pharma_name', 'Pharmacy Name') }}
-    {{ Form::text('pharma_name', null, ['class'=>'form-control', 'required'=>'required']) }}
-  </div>
-
-
-  <div class="form-group">
     {{ Form::label('username', 'Username') }}
     {{ Form::text('username', null, ['class'=>'form-control', 'required'=>'required']) }}
   </div>

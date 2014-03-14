@@ -1,30 +1,24 @@
-<div class="panel panel-primary">
+@extends('master')
+
+@section('c')
+
+	<div class="panel panel-primary">
 
 		  <div class="panel-heading">
-		    <h3 class="panel-title">Add New Doctor</h3>
+		    <h3 class="panel-title">Edit Doctor Information</h3>
 		  </div>
 		  <div class="panel-body">
 		    
 		  	
-<form method="post" action="{{ route('pharmacies.store') }}" role="form">
+{{ Form::model($doc,['route'=>['doctors.update', $doc->id], 'method'=>'put']) }}
 
-	{{ Form::hidden('type', 'pharm') }}
 
 	<div class="form-group">
-    {{ Form::label('pharma_name', 'Pharmacy Name') }}
-    {{ Form::text('pharma_name', null, ['class'=>'form-control', 'required'=>'required']) }}
-  </div>
-
-
-  <div class="form-group">
     {{ Form::label('username', 'Username') }}
     {{ Form::text('username', null, ['class'=>'form-control', 'required'=>'required']) }}
   </div>
 
-   <div class="form-group">
-    {{ Form::label('password', 'Password') }}
-    {{ Form::password('password',['class'=>'form-control', 'required'=>'required']) }}
-  </div>
+  
 
   <div class="form-group">
     {{ Form::label('fname', 'First Name') }}
@@ -49,4 +43,6 @@
 				  
 		</div
 			
-	</div>
+	</div>	
+
+@stop

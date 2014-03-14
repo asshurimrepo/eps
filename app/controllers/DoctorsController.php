@@ -1,6 +1,6 @@
 <?php
 
-class PharmaciesController extends BaseController {
+class DoctorsController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +9,7 @@ class PharmaciesController extends BaseController {
 	 */
 	public function index()
 	{
-        return View::make('pharmacies.index');
+        return View::make('doctors.index');
 	}
 
 	/**
@@ -19,7 +19,7 @@ class PharmaciesController extends BaseController {
 	 */
 	public function create()
 	{
-        return View::make('pharmacies.create');
+        return View::make('doctors.create');
 	}
 
 	/**
@@ -29,13 +29,11 @@ class PharmaciesController extends BaseController {
 	 */
 	public function store()
 	{
-		$u = User::create(Input::except('pharma_name'));
-		Pharmacy::create([
-			'name'=>Input::get('pharma_name'),
-			'user_id' => $u->id
-		]);
+		$data = Input::all();
+		$data['password'] = Hash::make('password');
 
-		return Redirect::back()->with('suc', 'New Pharmacy has been Added!');
+		User::create($data);
+		return Redirect::back()->with('suc', 'New Doctor has been added!');
 	}
 
 	/**
@@ -46,7 +44,7 @@ class PharmaciesController extends BaseController {
 	 */
 	public function show($id)
 	{
-        return View::make('pharmacies.show');
+        return View::make('doctors.show');
 	}
 
 	/**
@@ -57,7 +55,8 @@ class PharmaciesController extends BaseController {
 	 */
 	public function edit($id)
 	{
-        return View::make('pharmacies.edit');
+		$doc = User::find($id);
+        return View::make('doctors.edit', compact('doc'));
 	}
 
 	/**
@@ -68,7 +67,10 @@ class PharmaciesController extends BaseController {
 	 */
 	public function update($id)
 	{
-		//
+		$doc = User::find($id);
+		$doc->update(Input::all());
+
+		return Redirect::back()->with('suc', ' Information Successfully Updated!');
 	}
 
 	/**
