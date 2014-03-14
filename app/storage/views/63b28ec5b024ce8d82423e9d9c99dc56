@@ -23,7 +23,13 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Electronic Prescription System</a>
+      <a class="navbar-brand" href="<?php echo url('main'); ?>">Electronic Prescription System 
+      <?php if(Auth::user()->type == 'pharm'): ?>
+
+        | <?php echo Pharmacy::where('user_id', Auth::user()->id)->first()->name; ?>
+
+      <?php endif; ?>
+       </a>
     </div>
 
     <!-- Collect the nav links, forms, and other content for toggling -->

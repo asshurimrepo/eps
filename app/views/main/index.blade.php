@@ -110,6 +110,7 @@
 				var data = $(this).data();
 				data.medication_id = this.value;
 				data.patient_id = {{ $patient->id }};
+				data.user_id = {{ Auth::user()->id }};
 				$.post('{{ url('main/send-data') }}', {data:data});
 
 

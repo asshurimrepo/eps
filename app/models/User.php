@@ -14,6 +14,12 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	protected $guarded = [];
 
+
+	public function scopeDoctors($q)
+	{
+		return $q->where('type', 'doc');	
+	}
+
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
@@ -54,7 +60,7 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	public function fullname()
 	{
-		return $this->firstname.' '.$this->lastname.', '.$this->title;
+		return $this->fname.' '.$this->lname.', '.$this->prefix;
 	}
 
 
@@ -62,4 +68,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	{
 		return $this->hasMany('Prescription')->orderBy('id', 'desc');
 	}
+
+	public function pharm()
+	{
+		$this->hasOne('Pharmacy');
+	}
+
+
 }

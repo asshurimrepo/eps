@@ -808,3 +808,251 @@ Stack trace:
 #2 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(608): Symfony\Component\HttpFoundation\Response->send()
 #3 C:\xampp\htdocs\silliman\public\index.php(49): Illuminate\Foundation\Application->run()
 #4 {main} [] []
+[2014-03-14 06:12:35] production.ERROR: exception 'LogicException' with message 'Relationship method must return an object of type Illuminate\Database\Eloquent\Relations\Relation' in C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2289
+Stack trace:
+#0 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2229): Illuminate\Database\Eloquent\Model->getRelationshipFromMethod('pharm', 'pharm')
+#1 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php(2729): Illuminate\Database\Eloquent\Model->getAttribute('pharm')
+#2 C:\xampp\htdocs\silliman\app\storage\views\63b28ec5b024ce8d82423e9d9c99dc56(29): Illuminate\Database\Eloquent\Model->__get('pharm')
+#3 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(37): include('C:\xampp\htdocs...')
+#4 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\xampp\htdocs...', Array)
+#5 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(134): Illuminate\View\Engines\CompilerEngine->get('C:\xampp\htdocs...', Array)
+#6 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(102): Illuminate\View\View->getContents()
+#7 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(76): Illuminate\View\View->renderContents()
+#8 C:\xampp\htdocs\silliman\app\storage\views\c53ebbcfeac60d311c00f1e5056f6d24(1): Illuminate\View\View->render()
+#9 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(37): include('C:\xampp\htdocs...')
+#10 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\xampp\htdocs...', Array)
+#11 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(134): Illuminate\View\Engines\CompilerEngine->get('C:\xampp\htdocs...', Array)
+#12 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(102): Illuminate\View\View->getContents()
+#13 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(76): Illuminate\View\View->renderContents()
+#14 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\Response.php(70): Illuminate\View\View->render()
+#15 C:\xampp\htdocs\silliman\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#16 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#17 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1003): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#18 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(968): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#19 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(738): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#20 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(708): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#21 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\FrameGuard.php(38): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#22 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#23 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#24 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#25 C:\xampp\htdocs\silliman\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#26 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(606): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#27 C:\xampp\htdocs\silliman\public\index.php(49): Illuminate\Foundation\Application->run()
+#28 {main}
+
+Next exception 'ErrorException' with message 'Relationship method must return an object of type Illuminate\Database\Eloquent\Relations\Relation (View: C:\xampp\htdocs\silliman\app\views\master.blade.php)' in C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2289
+Stack trace:
+#0 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(LogicException))
+#1 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\xampp\htdocs...', Array)
+#2 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(134): Illuminate\View\Engines\CompilerEngine->get('C:\xampp\htdocs...', Array)
+#3 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(102): Illuminate\View\View->getContents()
+#4 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(76): Illuminate\View\View->renderContents()
+#5 C:\xampp\htdocs\silliman\app\storage\views\c53ebbcfeac60d311c00f1e5056f6d24(1): Illuminate\View\View->render()
+#6 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(37): include('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\xampp\htdocs...', Array)
+#8 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(134): Illuminate\View\Engines\CompilerEngine->get('C:\xampp\htdocs...', Array)
+#9 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(102): Illuminate\View\View->getContents()
+#10 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(76): Illuminate\View\View->renderContents()
+#11 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\Response.php(70): Illuminate\View\View->render()
+#12 C:\xampp\htdocs\silliman\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#13 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#14 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1003): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#15 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(968): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(738): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(708): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\FrameGuard.php(38): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#19 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#20 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#21 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#22 C:\xampp\htdocs\silliman\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#23 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(606): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#24 C:\xampp\htdocs\silliman\public\index.php(49): Illuminate\Foundation\Application->run()
+#25 {main}
+
+Next exception 'ErrorException' with message 'Relationship method must return an object of type Illuminate\Database\Eloquent\Relations\Relation (View: C:\xampp\htdocs\silliman\app\views\master.blade.php) (View: C:\xampp\htdocs\silliman\app\views\master.blade.php)' in C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Model.php:2289
+Stack trace:
+#0 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException))
+#1 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\xampp\htdocs...', Array)
+#2 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(134): Illuminate\View\Engines\CompilerEngine->get('C:\xampp\htdocs...', Array)
+#3 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(102): Illuminate\View\View->getContents()
+#4 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(76): Illuminate\View\View->renderContents()
+#5 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\Response.php(70): Illuminate\View\View->render()
+#6 C:\xampp\htdocs\silliman\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1003): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(968): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(738): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(708): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\FrameGuard.php(38): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\silliman\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(606): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\silliman\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2014-03-14 06:12:53] production.ERROR: exception 'ErrorException' with message 'Trying to get property of non-object' in C:\xampp\htdocs\silliman\app\storage\views\63b28ec5b024ce8d82423e9d9c99dc56:29
+Stack trace:
+#0 C:\xampp\htdocs\silliman\app\storage\views\63b28ec5b024ce8d82423e9d9c99dc56(29): Illuminate\Exception\Handler->handleError(8, 'Trying to get p...', 'C:\xampp\htdocs...', 29, Array)
+#1 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(37): include('C:\xampp\htdocs...')
+#2 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\xampp\htdocs...', Array)
+#3 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(134): Illuminate\View\Engines\CompilerEngine->get('C:\xampp\htdocs...', Array)
+#4 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(102): Illuminate\View\View->getContents()
+#5 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(76): Illuminate\View\View->renderContents()
+#6 C:\xampp\htdocs\silliman\app\storage\views\c53ebbcfeac60d311c00f1e5056f6d24(1): Illuminate\View\View->render()
+#7 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(37): include('C:\xampp\htdocs...')
+#8 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\xampp\htdocs...', Array)
+#9 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(134): Illuminate\View\Engines\CompilerEngine->get('C:\xampp\htdocs...', Array)
+#10 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(102): Illuminate\View\View->getContents()
+#11 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(76): Illuminate\View\View->renderContents()
+#12 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\Response.php(70): Illuminate\View\View->render()
+#13 C:\xampp\htdocs\silliman\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#14 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#15 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1003): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#16 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(968): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#17 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(738): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(708): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#19 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\FrameGuard.php(38): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#20 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#21 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#22 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#23 C:\xampp\htdocs\silliman\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#24 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(606): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#25 C:\xampp\htdocs\silliman\public\index.php(49): Illuminate\Foundation\Application->run()
+#26 {main}
+
+Next exception 'ErrorException' with message 'Trying to get property of non-object (View: C:\xampp\htdocs\silliman\app\views\master.blade.php)' in C:\xampp\htdocs\silliman\app\storage\views\63b28ec5b024ce8d82423e9d9c99dc56:29
+Stack trace:
+#0 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException))
+#1 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\xampp\htdocs...', Array)
+#2 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(134): Illuminate\View\Engines\CompilerEngine->get('C:\xampp\htdocs...', Array)
+#3 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(102): Illuminate\View\View->getContents()
+#4 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(76): Illuminate\View\View->renderContents()
+#5 C:\xampp\htdocs\silliman\app\storage\views\c53ebbcfeac60d311c00f1e5056f6d24(1): Illuminate\View\View->render()
+#6 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(37): include('C:\xampp\htdocs...')
+#7 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\xampp\htdocs...', Array)
+#8 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(134): Illuminate\View\Engines\CompilerEngine->get('C:\xampp\htdocs...', Array)
+#9 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(102): Illuminate\View\View->getContents()
+#10 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(76): Illuminate\View\View->renderContents()
+#11 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\Response.php(70): Illuminate\View\View->render()
+#12 C:\xampp\htdocs\silliman\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#13 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#14 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1003): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#15 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(968): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#16 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(738): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#17 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(708): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\FrameGuard.php(38): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#19 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#20 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#21 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#22 C:\xampp\htdocs\silliman\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#23 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(606): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#24 C:\xampp\htdocs\silliman\public\index.php(49): Illuminate\Foundation\Application->run()
+#25 {main}
+
+Next exception 'ErrorException' with message 'Trying to get property of non-object (View: C:\xampp\htdocs\silliman\app\views\master.blade.php) (View: C:\xampp\htdocs\silliman\app\views\master.blade.php)' in C:\xampp\htdocs\silliman\app\storage\views\63b28ec5b024ce8d82423e9d9c99dc56:29
+Stack trace:
+#0 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(ErrorException))
+#1 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\xampp\htdocs...', Array)
+#2 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(134): Illuminate\View\Engines\CompilerEngine->get('C:\xampp\htdocs...', Array)
+#3 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(102): Illuminate\View\View->getContents()
+#4 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(76): Illuminate\View\View->renderContents()
+#5 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\Response.php(70): Illuminate\View\View->render()
+#6 C:\xampp\htdocs\silliman\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1003): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(968): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(738): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(708): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\FrameGuard.php(38): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\silliman\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(606): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\silliman\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2014-03-14 06:13:08] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Call to a member function get() on a non-object' in C:\xampp\htdocs\silliman\app\storage\views\63b28ec5b024ce8d82423e9d9c99dc56:29
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-03-14 06:23:32] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'var' (T_VAR)' in C:\xampp\htdocs\silliman\app\controllers\MainController.php:23
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-03-14 06:23:38] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected 'var' (T_VAR)' in C:\xampp\htdocs\silliman\app\controllers\MainController.php:23
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-03-14 06:24:10] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'Cannot redeclare User::prescriptions()' in C:\xampp\htdocs\silliman\app\models\User.php:78
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-03-14 06:27:12] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ')'' in C:\xampp\htdocs\silliman\app\storage\views\c53ebbcfeac60d311c00f1e5056f6d24:10
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
+[2014-03-14 06:56:28] production.ERROR: exception 'BadMethodCallException' with message 'Call to undefined method Illuminate\Database\Query\Builder::fullname()' in C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:1891
+Stack trace:
+#0 [internal function]: Illuminate\Database\Query\Builder->__call('fullname', Array)
+#1 [internal function]: Illuminate\Database\Query\Builder->fullname()
+#2 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Builder.php(912): call_user_func_array(Array, Array)
+#3 [internal function]: Illuminate\Database\Eloquent\Builder->__call('fullname', Array)
+#4 [internal function]: Illuminate\Database\Eloquent\Builder->fullname()
+#5 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Database\Eloquent\Relations\Relation.php(281): call_user_func_array(Array, Array)
+#6 C:\xampp\htdocs\silliman\app\storage\views\27f645511a7ffbc132c166087caaf99a(8): Illuminate\Database\Eloquent\Relations\Relation->__call('fullname', Array)
+#7 C:\xampp\htdocs\silliman\app\storage\views\27f645511a7ffbc132c166087caaf99a(8): Illuminate\Database\Eloquent\Relations\BelongsTo->fullname()
+#8 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(37): include('C:\xampp\htdocs...')
+#9 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\xampp\htdocs...', Array)
+#10 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(134): Illuminate\View\Engines\CompilerEngine->get('C:\xampp\htdocs...', Array)
+#11 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(102): Illuminate\View\View->getContents()
+#12 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(76): Illuminate\View\View->renderContents()
+#13 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\Response.php(70): Illuminate\View\View->render()
+#14 C:\xampp\htdocs\silliman\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#15 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#16 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1003): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#17 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(968): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(738): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#19 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(708): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#20 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\FrameGuard.php(38): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#21 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#22 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#23 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#24 C:\xampp\htdocs\silliman\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#25 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(606): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#26 C:\xampp\htdocs\silliman\public\index.php(49): Illuminate\Foundation\Application->run()
+#27 {main}
+
+Next exception 'ErrorException' with message 'Call to undefined method Illuminate\Database\Query\Builder::fullname() (View: C:\xampp\htdocs\silliman\app\views\print.blade.php)' in C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Database\Query\Builder.php:1891
+Stack trace:
+#0 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\PhpEngine.php(41): Illuminate\View\Engines\CompilerEngine->handleViewException(Object(BadMethodCallException))
+#1 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\Engines\CompilerEngine.php(56): Illuminate\View\Engines\PhpEngine->evaluatePath('C:\xampp\htdocs...', Array)
+#2 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(134): Illuminate\View\Engines\CompilerEngine->get('C:\xampp\htdocs...', Array)
+#3 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(102): Illuminate\View\View->getContents()
+#4 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\View\View.php(76): Illuminate\View\View->renderContents()
+#5 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\Response.php(70): Illuminate\View\View->render()
+#6 C:\xampp\htdocs\silliman\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(202): Illuminate\Http\Response->setContent(Object(Illuminate\View\View))
+#7 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1413): Symfony\Component\HttpFoundation\Response->__construct(Object(Illuminate\View\View))
+#8 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(1003): Illuminate\Routing\Router->prepareResponse(Object(Illuminate\Http\Request), Object(Illuminate\View\View))
+#9 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Routing\Router.php(968): Illuminate\Routing\Router->dispatchToRoute(Object(Illuminate\Http\Request))
+#10 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(738): Illuminate\Routing\Router->dispatch(Object(Illuminate\Http\Request))
+#11 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(708): Illuminate\Foundation\Application->dispatch(Object(Illuminate\Http\Request))
+#12 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Http\FrameGuard.php(38): Illuminate\Foundation\Application->handle(Object(Illuminate\Http\Request), 1, true)
+#13 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Session\Middleware.php(72): Illuminate\Http\FrameGuard->handle(Object(Illuminate\Http\Request), 1, true)
+#14 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Queue.php(47): Illuminate\Session\Middleware->handle(Object(Illuminate\Http\Request), 1, true)
+#15 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Cookie\Guard.php(51): Illuminate\Cookie\Queue->handle(Object(Illuminate\Http\Request), 1, true)
+#16 C:\xampp\htdocs\silliman\vendor\stack\builder\src\Stack\StackedHttpKernel.php(23): Illuminate\Cookie\Guard->handle(Object(Illuminate\Http\Request), 1, true)
+#17 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(606): Stack\StackedHttpKernel->handle(Object(Illuminate\Http\Request))
+#18 C:\xampp\htdocs\silliman\public\index.php(49): Illuminate\Foundation\Application->run()
+#19 {main} [] []
+[2014-03-14 06:56:28] production.ERROR: exception 'ErrorException' with message 'ob_end_flush(): failed to send buffer of zlib output compression (1)' in C:\xampp\htdocs\silliman\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php:388
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleError(8, 'ob_end_flush():...', 'C:\xampp\htdocs...', 388, Array)
+#1 C:\xampp\htdocs\silliman\vendor\symfony\http-foundation\Symfony\Component\HttpFoundation\Response.php(388): ob_end_flush()
+#2 C:\xampp\htdocs\silliman\vendor\laravel\framework\src\Illuminate\Foundation\Application.php(608): Symfony\Component\HttpFoundation\Response->send()
+#3 C:\xampp\htdocs\silliman\public\index.php(49): Illuminate\Foundation\Application->run()
+#4 {main} [] []
+[2014-03-14 07:30:15] production.ERROR: exception 'Symfony\Component\Debug\Exception\FatalErrorException' with message 'syntax error, unexpected ';'' in C:\xampp\htdocs\silliman\app\storage\views\27f645511a7ffbc132c166087caaf99a:35
+Stack trace:
+#0 [internal function]: Illuminate\Exception\Handler->handleShutdown()
+#1 {main} [] []
